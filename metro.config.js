@@ -1,29 +1,17 @@
-/**
- * Metro configuration for React Native
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
-// expo v40:
-const { getDefaultConfig } = require("@expo/metro-config");
-
-// expo v41: 
-// remove the @ (see: https://blog.expo.io/expo-sdk-41-12cc5232f2ef)
-const { getDefaultConfig } = require("expo/metro-config");
+const { getDefaultConfig } = require("metro-config");
 
 module.exports = (async () => {
   const {
     resolver: { sourceExts, assetExts }
-  } = await getDefaultConfig(__dirname);
+  } = await getDefaultConfig();
   return {
-    getTransformOptions: async () => ({
-      transform: {
-        experimentalImportSupport: false,
-        inlineRequires: true,
-      },
-    }),
     transformer: {
+      getTransformOptions: async () => ({
+        transform: {
+          experimentalImportSupport: false,
+          inlineRequires: true,
+        },
+      }),
       babelTransformerPath: require.resolve("react-native-svg-transformer")
     },
     resolver: {
