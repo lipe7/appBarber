@@ -8,16 +8,29 @@ import {
     SignMessageButtonText,
     SignMessageButtonTextBold
 } from './styles';
+import { useNavigation } from '@react-navigation/native';
+
 import BarberLogo from '../../assets/barber.svg'
 import EmailIcon from '../../assets/email.svg'
 import LockIcon from '../../assets/lock.svg'
-import SignUp from '../SignUp';
 import SignInput from '../../components/SignInput';
 
 export default () => {
     
+    const navigation = useNavigation();
+
     const [emailField, setEmailField] = useState('');
     const [passwordField, setPasswordField] = useState('');
+
+    const handleSignClick = () => {
+        
+    }
+
+    const handleMessageButtonClick = () => {
+        navigation.reset({
+            routes: [{name: 'SignUp'}]
+        });
+    }
 
     return(
         <Container>
@@ -40,12 +53,16 @@ export default () => {
                     password={true}
                 />
 
-                <CustomButton>
+                <CustomButton
+                    onPress={handleSignClick}
+                >
                     <CustomButtonText>LOGIN</CustomButtonText>
                 </CustomButton>
             </InputArea>
 
-            <SignMessageButton>
+            <SignMessageButton
+                onPress={handleMessageButtonClick}
+            >
                 <SignMessageButtonText>Ainda não tem conta?</SignMessageButtonText>
                 <SignMessageButtonTextBold>CADASTRE-SE</SignMessageButtonTextBold>
             </SignMessageButton>
