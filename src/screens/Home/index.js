@@ -1,13 +1,11 @@
-import React from "react";
-import { Container } from "react-native"; 
-import { Text } from "react-native-svg";
+import React from 'react';
+import { Text } from 'react-native';
+import { Container } from './styles';
 
 export default () => {
     return (
         <Container>
-            <Text>
-                HOME
-            </Text>
+            <Text>Home</Text>
         </Container>
-    )
+    );
 }
