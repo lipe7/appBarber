@@ -9,7 +9,7 @@ import FavoriteIcon from '../assets/favorite.svg';
 import AccountIcon from '../assets/account.svg';
 
 const TabArea = styled.View`
-    height: 60px;
+    height: 50px;
     background-color: #189AB4;
     flex-direction: row;
 `;
@@ -20,6 +20,16 @@ const TabItem = styled.TouchableOpacity`
     align-items: center;
 `;
 
+const TabItemCenter= styled.TouchableOpacity`
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFF;
+    border-radius: 5px;
+    margin-top: -10px;
+    border: 3px solid #189AB4;
+`;
 
 export default ({state, navigation}) => {
 
@@ -30,19 +40,19 @@ export default ({state, navigation}) => {
     return (
         <TabArea>
             <TabItem onPress={()=>goTo('Home')}>
-                <HomeIcon width="24" height="24" fill="#FFFFFF" />
+                <HomeIcon style={{opacity: state.index === 0 ? 1 : 0.5 }} width="24" height="24" fill="#FFFFFF" />
             </TabItem>
             <TabItem onPress={()=>goTo('Search')}>
-                <SearchIcon width="24" height="24" fill="#FFFFFF" />
+                <SearchIcon style={{opacity: state.index === 1 ? 1 : 0.5 }} width="24" height="24" fill="#FFFFFF" />
             </TabItem>
-            <TabItem onPress={()=>goTo('Appointments')}>
-                <TodayIcon width="24" height="24" fill="#FFFFFF"/>
-            </TabItem>
+            <TabItemCenter onPress={()=>goTo('Appointments')}>
+                <TodayIcon style={{opacity: state.index === 2 ? 1 : 0.5 }} width="32" height="32" fill="#189AB4"/>
+            </TabItemCenter>
             <TabItem onPress={()=>goTo('Favorites')}>
-                <FavoriteIcon width="24" height="24" fill="#FFFFFF" />
+                <FavoriteIcon style={{opacity: state.index === 3 ? 1 : 0.5 }} width="24" height="24" fill="#FFFFFF" />
             </TabItem>
             <TabItem onPress={()=>goTo('Profile')}>
-                <AccountIcon width="24" height="24" fill="#FFFFFF" />
+                <AccountIcon style={{opacity: state.index === 4 ? 1 : 0.5 }} width="24" height="24" fill="#FFFFFF" />
             </TabItem>
         </TabArea>
     );
