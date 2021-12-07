@@ -1,0 +1,21 @@
+[
+   {
+      "avatar":"https://api.b7web.com.br/devbarber/media/avatars/2.png",
+      "distance":0.691000000000108,
+      "id":5,
+      "latitude":"-23.5530907",
+      "longitude":"-46.6682795",
+      "name":"Pedro Diniz",
+      "stars":4.5
+   },
+   {
+      "avatar":"https://api.b7web.com.br/devbarber/media/avatars/3.png",
+      "distance":0.691000000000108,
+      "id":7,
+      "latitude":"-23.5730907",
+      "longitude":"-46.6682795",
+      "name":"Ronaldo Sousa",
+      "stars":2.9
+   }
+]
+  
