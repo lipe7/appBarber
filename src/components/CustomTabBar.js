@@ -3,8 +3,6 @@ import styled from 'styled-components/native';
 
 // ICONES
 import HomeIcon from '../assets/home.svg';
-import SearchIcon from '../assets/search.svg';
-import TodayIcon from '../assets/today.svg';
 import FavoriteIcon from '../assets/favorite.svg';
 import AccountIcon from '../assets/account.svg';
 
